@@ -58,8 +58,8 @@ function deploy {
     # https://docs.travis-ci.com/user/pull-requests/#Pull-Requests-and-Security-Restrictions
     echo "Fetching git-crypt key..."
     openssl aes-256-cbc \
-        -K $encrypted_56228062df6f_key \
-        -iv $encrypted_56228062df6f_iv \
+        -K $encrypted_ae13e41ac822_key \
+        -iv $encrypted_ae13e41ac822_iv \
         -in git-crypt.key.enc -out ./git-crypt.key -d
 
     chmod 0400 git-crypt.key
