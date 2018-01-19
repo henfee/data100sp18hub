@@ -5,10 +5,6 @@ rbac:
 
 prePuller:
   enabled: false
-#  enabled: true
-#  image:
-#    name: ryanlovett/image-allnodes-puller
-#    tag: 242d8db
 
 hub:
   extraConfig: |
