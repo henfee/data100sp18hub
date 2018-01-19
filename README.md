@@ -1,4 +1,4 @@
-# Data100 JupyterHub
+# Data100 SP18 JupyterHub
 
 Contains a fully reproducible configuration for JupyterHub on
 data100.datahub.berkeley.edu, as well as its single user image.
