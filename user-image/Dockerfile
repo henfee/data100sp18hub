@@ -38,6 +38,8 @@ RUN install -d -o jovyan -g jovyan ${CONDA_PREFIX}
 
 WORKDIR /home/jovyan
 
+RUN apt-get clean
+
 USER jovyan
 
 RUN curl -o /tmp/miniconda.sh \
