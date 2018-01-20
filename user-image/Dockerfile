@@ -71,6 +71,9 @@ RUN jupyter serverextension enable --sys-prefix --py jupyterlab
 
 RUN pip install psycopg2==2.7.3.2
 
+ADD jupyter_notebook_config.py ${CONDA_PREFIX}/envs/data100/etc/jupyter/
+ADD ipython_config.py ${CONDA_PREFIX}/envs/data100/etc/ipython/
+
 # Useful for debugging any issues with conda
 RUN conda info -a
 
