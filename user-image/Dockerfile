@@ -19,7 +19,11 @@ RUN apt-get update && \
 		texlive-xetex \
 		texlive-fonts-recommended \
 		texlive-generic-recommended \
-		;
+		postgresql-client \
+		tmux \
+		mc \
+		nano \
+		emacs-nox
 
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
