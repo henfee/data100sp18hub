@@ -11,6 +11,7 @@ RUN apt-get update && \
 		build-essential \
 		tar \
 		git \
+		ca-certificates \
 		curl \
 		wget \
 		vim \
