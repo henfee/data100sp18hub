@@ -4,7 +4,7 @@ ENV CONDA_PREFIX /srv/conda
 ENV PATH ${CONDA_PREFIX}/bin:$PATH
 
 RUN apt-get update && \
-	apt-get install --yes \
+	apt-get install --yes --no-install-recommends \
 		locales \
 		python3.6 \
 		python3.6-dev \
