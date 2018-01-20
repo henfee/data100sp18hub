@@ -80,19 +80,22 @@ RUN conda env create -q -f /tmp/environment.yml
 # environment won't be preserved here.
 ENV PATH ${CONDA_PREFIX}/envs/data100/bin:$PATH
 
+# Set bash as shell in terminado. Disable history.
+ADD jupyter_notebook_config.py ${CONDA_PREFIX}/envs/data100/etc/jupyter/
+ADD ipython_config.py ${CONDA_PREFIX}/envs/data100/etc/ipython/
+
 RUN pip install jupyterhub==0.8.1
-
-RUN pip install nbgrader==0.5.4
-RUN jupyter nbextension install --sys-prefix --py nbgrader
-RUN jupyter nbextension enable --sys-prefix --py nbgrader
-RUN jupyter serverextension enable --sys-prefix --py nbgrader
-
-RUN jupyter serverextension enable --sys-prefix --py jupyterlab
 
 RUN pip install psycopg2==2.7.3.2
 
-ADD jupyter_notebook_config.py ${CONDA_PREFIX}/envs/data100/etc/jupyter/
-ADD ipython_config.py ${CONDA_PREFIX}/envs/data100/etc/ipython/
+# Installed in conda environment
+RUN jupyter serverextension enable --sys-prefix --py jupyterlab
+
+#RUN pip install nbgrader==0.5.4
+RUN pip install git+git://github.com/ryanlovett/nbgrader.git@4fa5272
+RUN jupyter nbextension install --sys-prefix --py nbgrader
+RUN jupyter nbextension enable --sys-prefix --py nbgrader
+RUN jupyter serverextension enable --sys-prefix --py nbgrader
 
 # Useful for debugging any issues with conda
 RUN conda info -a
