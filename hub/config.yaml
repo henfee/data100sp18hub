@@ -4,7 +4,7 @@ rbac:
   enabled: true
 
 prePuller:
-  enabled: false
+  enabled: true
 
 hub:
   extraConfig: |
