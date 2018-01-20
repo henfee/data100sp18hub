@@ -61,7 +61,6 @@ RUN jupyter nbextension install --sys-prefix --py nbgrader
 RUN jupyter nbextension enable --sys-prefix --py nbgrader
 RUN jupyter serverextension enable --sys-prefix --py nbgrader
 
-RUN pip install jupyterlab==0.31.1
 RUN jupyter serverextension enable --sys-prefix --py jupyterlab
 
 RUN pip install psycopg2==2.7.3.2
