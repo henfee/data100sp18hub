@@ -12,6 +12,7 @@ dependencies:
 - decorator=4.2.1
 - entrypoints=0.2.3
 - expat=2.2.5
+- flake8=3.5.0
 - gettext=0.19.8.1
 - html5lib=1.0.1
 - hypothesis=3.38.5
@@ -40,6 +41,7 @@ dependencies:
 - pandocfilters=1.4.2
 - patsy=0.5.0
 - pcre=8.41
+- pep8=1.7.1
 - pickleshare=0.7.4
 - pip=9.0.1
 - plotly=2.2.2
@@ -47,7 +49,9 @@ dependencies:
 - prompt_toolkit=1.0.15
 - protobuf=3.4.1
 - py=1.5.2
+- pyflakes=1.5.0
 - pygments=2.2.0
+- pylint=1.8.1
 - pyparsing=2.2.0
 - pytest=3.3.2
 - python=3.6.4
@@ -55,6 +59,7 @@ dependencies:
 - pytz=2017.3
 - pyzmq=16.0.3
 - requests=2.18.4
+- scikit-image=0.13.0
 - scikit-learn=0.19.1
 - scipy=1.0.0
 - seaborn=0.8.1
@@ -71,6 +76,7 @@ dependencies:
 - tornado=4.5.3
 - traitlets=4.3.2
 - widgetsnbextension=3.1.0
+- xarray=0.10.0
 - xz=5.2.3
 - zeromq=4.2.2
 - pip:
@@ -80,3 +86,4 @@ dependencies:
   - oauthlib==2.0.6
   - requests-oauthlib==0.8.0
   - tweepy==3.5.0
+  
