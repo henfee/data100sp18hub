@@ -10,6 +10,8 @@ RUN apt-get update && \
 		python3.6 \
 		python3.6-dev \
 		build-essential \
+		man \
+		less \
 		tar \
 		git \
 		ca-certificates \
