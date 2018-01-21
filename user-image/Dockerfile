@@ -99,6 +99,10 @@ RUN jupyter nbextension install --sys-prefix --py nbgrader
 RUN jupyter nbextension enable --sys-prefix --py nbgrader
 RUN jupyter serverextension enable --sys-prefix --py nbgrader
 
+# For dask dashboard
+RUN pip install nbserverproxy==0.5.0
+RUN jupyter serverextension enable --sys-prefix --py nbserverproxy
+
 # Useful for debugging any issues with conda
 RUN conda info -a
 
