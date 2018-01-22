@@ -24,6 +24,7 @@ RUN apt-get update && \
 # Install these without 'recommended' packages to keep image smaller.
 RUN apt-get install --no-install-recommends --yes \
 		screen \
+		openssh-client \
 		tmux \
 		emacs-nox \
 		nano \
