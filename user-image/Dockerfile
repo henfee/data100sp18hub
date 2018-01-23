@@ -104,6 +104,10 @@ RUN jupyter serverextension enable --sys-prefix --py nbgrader
 RUN pip install nbserverproxy==0.5.0
 RUN jupyter serverextension enable --sys-prefix --py nbserverproxy
 
+# interact notebook extension for ds100.gitbooks.io
+RUN pip install --no-cache-dir nbgitpuller==0.3
+RUN jupyter serverextension enable  --sys-prefix --py nbgitpuller
+
 # Useful for debugging any issues with conda
 RUN conda info -a
 
