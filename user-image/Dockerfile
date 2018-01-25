@@ -102,7 +102,7 @@ RUN jupyter nbextension enable --sys-prefix --py nbgrader
 RUN jupyter serverextension enable --sys-prefix --py nbgrader
 
 # For dask dashboard
-RUN pip install nbserverproxy==0.5.0
+RUN pip install git+git://github.com/jupyterhub/nbserverproxy.git@2238cb6
 RUN jupyter serverextension enable --sys-prefix --py nbserverproxy
 
 # interact notebook extension for ds100.gitbooks.io
