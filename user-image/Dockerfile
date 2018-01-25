@@ -26,6 +26,7 @@ RUN apt-get install --no-install-recommends --yes \
 		screen \
 		openssh-client \
 		tmux \
+		zip \
 		emacs-nox \
 		nano \
 		mc \
