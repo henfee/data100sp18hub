@@ -2,7 +2,7 @@
 
 # Install helm.
 
-set -euo pipefail
+set -xeuo pipefail
 
 URL="https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get"
 
