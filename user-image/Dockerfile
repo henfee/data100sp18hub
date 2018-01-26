@@ -109,6 +109,9 @@ RUN jupyter serverextension enable --sys-prefix --py nbserverproxy
 RUN pip install --no-cache-dir nbgitpuller==0.3
 RUN jupyter serverextension enable  --sys-prefix --py nbgitpuller
 
+# Disabling the autosavetime interval
+RUN sh setup_autosavetime.sh
+
 # Useful for debugging any issues with conda
 RUN conda info -a
 
