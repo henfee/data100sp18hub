@@ -67,7 +67,7 @@ USER jovyan
 # Download, install and configure the Conda environment
 
 RUN curl -o /tmp/miniconda.sh \
-	https://repo.continuum.io/miniconda/Miniconda3-4.3.31-Linux-x86_64.sh 
+	https://repo.continuum.io/miniconda/Miniconda3-4.3.31-Linux-x86_64.sh
 
 # Install miniconda
 RUN bash /tmp/miniconda.sh -b -u -p ${CONDA_PREFIX}
@@ -110,7 +110,12 @@ RUN pip install --no-cache-dir nbgitpuller==0.3
 RUN jupyter serverextension enable  --sys-prefix --py nbgitpuller
 
 # Disabling the autosavetime interval
-RUN sh setup_autosavetime.sh
+# Install nb extensions
+RUN pip install jupyter_contrib_nbextensions
+# We install, ignoring running servers
+jupyter contrib nbextensions install --sys-prefix --skip-running-check
+# Enable autosavetime which will by default disable autosave
+jupyter nbextension enable autosavetime/main
 
 # Useful for debugging any issues with conda
 RUN conda info -a
