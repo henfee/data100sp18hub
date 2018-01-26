@@ -113,9 +113,9 @@ RUN jupyter serverextension enable  --sys-prefix --py nbgitpuller
 # Install nb extensions
 RUN pip install jupyter_contrib_nbextensions
 # We install, ignoring running servers
-jupyter contrib nbextensions install --sys-prefix --skip-running-check
+RUN jupyter contrib nbextensions install --sys-prefix --skip-running-check
 # Enable autosavetime which will by default disable autosave
-jupyter nbextension enable autosavetime/main
+RUN jupyter nbextension enable autosavetime/main
 
 # Useful for debugging any issues with conda
 RUN conda info -a
