@@ -80,6 +80,7 @@ def build_user_image(image_name, commit_range=None, push=False):
 
 def deploy(release):
     # Set up helm!
+    helm('version')
     helm('init', '--service-account', 'tiller', '--upgrade')
     kubectl('rollout', 'status', '--watch', 'deployment/tiller-deploy',
         '--namespace=kube-system')
