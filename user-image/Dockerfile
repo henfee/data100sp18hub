@@ -26,7 +26,6 @@ RUN apt-get install --no-install-recommends --yes \
 		screen \
 		openssh-client \
 		tmux \
-		zip \
 		emacs-nox \
 		nano \
 		mc \
@@ -104,10 +103,6 @@ RUN jupyter serverextension enable --sys-prefix --py nbgrader
 # For dask dashboard
 RUN pip install git+git://github.com/jupyterhub/nbserverproxy.git@2238cb6
 RUN jupyter serverextension enable --sys-prefix --py nbserverproxy
-
-# interact notebook extension for ds100.gitbooks.io
-RUN pip install --no-cache-dir nbgitpuller==0.3
-RUN jupyter serverextension enable  --sys-prefix --py nbgitpuller
 
 # Disabling the autosavetime interval
 # Install nb extensions
