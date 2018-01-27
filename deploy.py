@@ -81,7 +81,8 @@ def build_user_image(image_name, commit_range=None, push=False):
 def deploy(release):
     # Set up helm!
     helm('version')
-    helm('init', '--service-account', 'tiller', '--upgrade')
+    # workaround https://github.com/kubernetes/helm/issues/3392
+    helm('init', '--service-account', 'tiller', '--force-upgrade')
     kubectl('rollout', 'status', '--watch', 'deployment/tiller-deploy',
         '--namespace=kube-system')
     helm('repo', 'add', 'jupyterhub',
