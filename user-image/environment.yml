@@ -13,7 +13,6 @@ dependencies:
 - entrypoints=0.2.3
 - expat=2.2.5
 - flake8=3.5.0
-- gettext=0.19.8.1
 - html5lib=1.0.1
 - hypothesis=3.38.5
 - ipykernel=4.7.0
@@ -32,7 +31,6 @@ dependencies:
 - mistune=0.8.3
 - nbconvert=5.3.1
 - nbformat=4.4.0
-- ncurses=6.0
 - networkx=2.0
 - notebook=5.3.1
 - numpy=1.12.1
@@ -67,11 +65,11 @@ dependencies:
 - simplegeneric=0.8.1
 - sip=4.18.1
 - six=1.11.0
+- sqlalchemy=1.2.1
 - sqlite=3.20.1
 - statsmodels=0.8.0
 - sympy=1.1.1
 - tensorflow=1.1.0
-- terminado=0.8.1
 - toolz=0.9.0
 - tornado=4.5.3
 - traitlets=4.3.2
