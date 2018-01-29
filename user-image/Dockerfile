@@ -66,7 +66,7 @@ USER jovyan
 # Download, install and configure the Conda environment
 
 RUN curl -o /tmp/miniconda.sh \
-	https://repo.continuum.io/miniconda/Miniconda3-4.3.31-Linux-x86_64.sh 
+	https://repo.continuum.io/miniconda/Miniconda3-4.3.31-Linux-x86_64.sh
 
 # Install miniconda
 RUN bash /tmp/miniconda.sh -b -u -p ${CONDA_PREFIX}
@@ -103,6 +103,14 @@ RUN jupyter serverextension enable --sys-prefix --py nbgrader
 # For dask dashboard
 RUN pip install git+git://github.com/jupyterhub/nbserverproxy.git@2238cb6
 RUN jupyter serverextension enable --sys-prefix --py nbserverproxy
+
+# Disabling the autosavetime interval
+# Install nb extensions
+RUN pip install jupyter_contrib_nbextensions
+# We install, ignoring running servers
+RUN jupyter contrib nbextensions install --sys-prefix --skip-running-check
+# Enable autosavetime which will by default disable autosave
+RUN jupyter nbextension enable autosavetime/main
 
 # Useful for debugging any issues with conda
 RUN conda info -a
