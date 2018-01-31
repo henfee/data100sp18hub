@@ -3,8 +3,8 @@ version: "v0.6.0"
 rbac:
   enabled: true
 
-prePuller:
-  enabled: true
+#prePuller:
+#  enabled: true
 #  image:
 #    name: ryanlovett/image-allnodes-puller
 #    tag: 242d8db
