@@ -95,7 +95,7 @@ RUN pip install psycopg2==2.7.3.2
 RUN jupyter serverextension enable --sys-prefix --py jupyterlab
 
 #RUN pip install nbgrader==0.5.4
-RUN pip install git+git://github.com/berkeley-dsep-infra/nbgrader.git@85ec36c
+RUN pip install git+git://github.com/berkeley-dsep-infra/nbgrader.git@7aba39a
 RUN jupyter nbextension install --sys-prefix --py nbgrader
 RUN jupyter nbextension enable --sys-prefix --py nbgrader
 RUN jupyter serverextension enable --sys-prefix --py nbgrader
