@@ -108,9 +108,9 @@ RUN jupyter serverextension enable --sys-prefix --py nbserverproxy
 # Install nb extensions
 RUN pip install jupyter_contrib_nbextensions
 # We install, ignoring running servers
-RUN jupyter contrib nbextensions install --sys-prefix --skip-running-check
+# RUN jupyter contrib nbextensions install --sys-prefix --skip-running-check
 # Enable autosavetime which will by default disable autosave
-RUN jupyter nbextension enable autosavetime/main
+# RUN jupyter nbextension enable autosavetime/main
 
 # Install nbgitpuller
 RUN pip install --no-cache-dir nbgitpuller==0.3
