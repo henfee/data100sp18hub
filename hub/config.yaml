@@ -37,10 +37,10 @@ hub:
           custom_attr_lists = yaml.safe_load(f)
           for name, volume in custom_attr_lists.items():
             if self.user.name in volume['users']:
-              self.singleuser.volumes.append({
+              self.volumes.append({
                 'name':name, 'hostPath': volume['hostPath']
                 })
-              self.singleuser.volume_mounts.append({
+              self.volume_mounts.append({
                 'name':name, 'mountPath': volume['mountPath']
                 })
               break
