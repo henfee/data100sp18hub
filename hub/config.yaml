@@ -33,6 +33,18 @@ hub:
               self.singleuser_image_spec = attr
               break
 
+        with open('/etc/jupyterhub/config/custom.volumes') as f:
+          custom_attr_lists = yaml.safe_load(f)
+          for name, volume in custom_attr_lists.items():
+            if self.user.name in volume['users']:
+              self.singleuser.volumes.append({
+                'name':name, 'hostPath': volume['hostPath']
+                })
+              self.singleuser.volume_mounts.append({
+                'name':name, 'mountPath', volume['mountPath']
+                })
+              break
+
         return (yield super().start())
     c.JupyterHub.spawner_class = CustomKubeSpawner
 
