@@ -38,7 +38,7 @@ hub:
           for name, volume in custom_attr_lists.items():
             if self.user.name in volume['users']:
               self.volumes.append({
-                'name':name, 'hostPath': volume['hostPath']
+                'name':name, 'hostPath': {'path': volume['hostPath']}
                 })
               self.volume_mounts.append({
                 'name':name, 'mountPath': volume['mountPath']
