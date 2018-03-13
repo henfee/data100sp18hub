@@ -41,7 +41,7 @@ hub:
                 'name':name, 'hostPath': volume['hostPath']
                 })
               self.singleuser.volume_mounts.append({
-                'name':name, 'mountPath', volume['mountPath']
+                'name':name, 'mountPath': volume['mountPath']
                 })
               break
 
