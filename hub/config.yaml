@@ -31,6 +31,9 @@ hub:
           custom_attr_lists = yaml.safe_load(f)
           for name, volume in custom_attr_lists.items():
             if self.user.name in volume['users']:
+              # do not duplicate volume or volume mounts
+              has_vol = list(filter(lambda x: x['name'] == name, self.volumes))
+              if len(has_vol) > 0: break
               self.volumes.append({
                 'name':name, 'hostPath': {'path': volume['hostPath']}
                 })
