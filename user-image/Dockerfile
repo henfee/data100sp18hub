@@ -36,6 +36,7 @@ RUN apt-get install --no-install-recommends --yes \
 		texlive-xetex \
 		texlive-fonts-recommended \
 		texlive-generic-recommended \
+		default-jdk \
 		;
 
 # Keep image size at a minimum
