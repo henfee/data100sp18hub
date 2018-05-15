@@ -117,7 +117,7 @@ RUN pip install --no-cache-dir nbgitpuller==0.3
 RUN jupyter serverextension enable  --sys-prefix --py nbgitpuller
 
 # Install nbzip
-RUN pip install --no-cache-dir nbzip
+RUN pip install --no-cache-dir git+https://github.com/ryanlovett/nbzip.git@1baaa8c
 RUN jupyter serverextension enable  --sys-prefix --py nbzip
 RUN jupyter nbextension install     --sys-prefix --py nbzip
 RUN jupyter nbextension enable      --sys-prefix --py nbzip
